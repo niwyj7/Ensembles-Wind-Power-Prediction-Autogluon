@@ -12,3 +12,15 @@ While recent literature, such as Cambridge’s **WindDragon** project, has demon
 * **Systematic Feature Ablation:** Evaluates the impact of regional aggregates, cyclical temporal encodings, and lagged weather features.
 * **Automated Model Selection:** Leverages AutoGluon to optimize hyperparameters across GBM, CatBoost, and Torch-based neural networks.
 * **Production-Ready:** Designed for 15-minute interval forecasting with a focus on interpretability and deployment speed.
+<img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/9b6bf685-294e-46f4-b55f-5e68d911b2e8" />
+<img width="1789" height="490" alt="image" src="https://github.com/user-attachments/assets/6492292f-f389-4537-b383-488d0d52af9c" />
+<img width="646" height="528" alt="image" src="https://github.com/user-attachments/assets/bb0bb3fc-dc25-4843-ad63-a9e1651c8781" />
+<img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/4fcd9cf4-394c-493b-916f-aedee7aa2bea" />
+<img width="750" height="528" alt="image" src="https://github.com/user-attachments/assets/931afd1f-aa8b-43cf-ac0f-768e6ffc879e" />
+<img width="1488" height="1489" alt="image" src="https://github.com/user-attachments/assets/24055b7e-7bab-4e46-ad56-03acec6aac7c" />
+
+
+
+
+
+
