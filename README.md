@@ -28,6 +28,19 @@ The model was trained on **16,704 observations** with **493 features** (pivoted 
 | LightGBM | 689.12 | 18.82s | Secondary contributor (11.1%) |
 | NeuralNetTorch | 799.84 | 31.18s | Tertiary contributor (11.1%) |
 
+### **Ablation Study Results**
+
+| Feature Group Removed | N Features | Val RMSE (Full) | Val RMSE (Ablated) | RMSE Delta |
+| :--- | :---: | :---: | :---: | :---: |
+| **grid_all** | 438 | 660.21 | 688.66 | **+28.46** |
+| **weather_extra** | 3 | 660.21 | 684.99 | **+24.79** |
+| **regional_diff** | 18 | 660.21 | 650.84 | -9.36 |
+| **regional_roll** | 36 | 660.21 | 649.90 | -10.30 |
+| **seperated_diff** | 219 | 660.21 | 648.71 | -11.50 |
+| **time** | 4 | 660.21 | 642.09 | -18.11 |
+| **regional_base** | 3 | 660.21 | 642.02 | -18.18 |
+
+
 **Key Metric Analysis:**
 * **Ensemble Composition:** The final model is a weighted ensemble dominated by **CatBoost (77.8%)**. This validates the initial hypothesis that gradient-boosted decision trees (GBDTs) are superior to deep learning for this tabular meteorological dataset.
 * **Efficiency:** The pipeline achieved a high inference throughput of **~9,131 rows/s**, making it highly suitable for real-time grid dispatching scenarios.
