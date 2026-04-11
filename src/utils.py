@@ -18,3 +18,14 @@ def _eval_metrics(y_true: pd.Series, y_pred: pd.Series) -> Dict[str, float]:
     corr = _safe_corr(y_true, y_pred)
     return {"mae": mae, "rmse": rmse, "mape_pct": mape, "corr": corr}
 
+
+@dataclass
+class AutoGluonRunResult:
+    tabular_predictor_path: str
+    tabular_leaderboard: pd.DataFrame
+    tabular_metrics_test: Dict[str, float]
+    tabular_best_model: str
+    tabular_best_hparams: Dict
+
+    multimodal_predictor_path: Optional[str] = None
+    multimodal_metrics_test: Optional[Dict[str, float]] = None
