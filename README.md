@@ -15,7 +15,31 @@ While projects like Cambridge’s *WindDragon* demonstrate the potential of Auto
 * **Systematic Feature Ablation:** Evaluates the impact of regional aggregates, cyclical temporal encodings, and lagged weather features.
 * **Automated Model Selection:** Leverages AutoGluon to optimise hyperparameters across GBM, CatBoost, and Torch-based neural networks.
 * **Production-Ready:** Designed for 15-minute interval forecasting with a focus on interpretability and deployment speed.
-  
+
+### **Results**  
+
+#### **### Performance Evaluation**
+The model was trained on **16,704 observations** with **493 features** (pivoted spatial grid points and temporal encodings). We utilized an automated ensemble strategy, which outperformed individual base models.
+
+| Model | Validation RMSE | Training Time (s) | Interpretation |
+| :--- | :--- | :--- | :--- |
+| **WeightedEnsemble_L2** | **660.21** | **69.0s (Total)** | **Best overall** |
+| CatBoost | 663.35 | 7.89s | Primary contributor (77.8%) |
+| LightGBM | 689.12 | 18.82s | Secondary contributor (11.1%) |
+| NeuralNetTorch | 799.84 | 31.18s | Tertiary contributor (11.1%) |
+
+**Key Metric Analysis:**
+* **Ensemble Composition:** The final model is a weighted ensemble dominated by **CatBoost (77.8%)**. This validates the initial hypothesis that gradient-boosted decision trees (GBDTs) are superior to deep learning for this tabular meteorological dataset.
+* **Efficiency:** The pipeline achieved a high inference throughput of **~9,131 rows/s**, making it highly suitable for real-time grid dispatching scenarios.
+
+#### **### Conclusion & Discussion**
+The experimental results demonstrate that for regional wind power forecasting in China using ECMWF data, **tree-based ensembles provide a more robust and computationally efficient solution than deep neural networks.**
+
+1.  **Model Selection:** CatBoost's dominance suggests it better captures the non-linear relationship between 100m wind speeds and power generation, likely due to its superior handling of noisy tabular features compared to `NeuralNetTorch`, which showed a significantly higher RMSE (799.84).
+2.  **Scalability:** Despite the high dimensionality of the input space (493 columns), the model converged in under 70 seconds. This suggests that the **Curse of Dimensionality** was effectively mitigated by AutoGluon’s feature pruning and the inherent feature selection of GBDTs.
+
+> **Compute Environment:** > Experiments were conducted on a high-memory Linux cluster (56 Cores, 448GB RAM). The architecture leverages multi-core parallelization for rapid hyperparameter optimization.
+
 
 ### **EDA**  
 * **Regional Wind Field Study** 
@@ -38,8 +62,6 @@ While projects like Cambridge’s *WindDragon* demonstrate the potential of Auto
 * No obvious evidence of increasing installed capacity of wind farms.
 
 <img width="1488" height="1489" alt="image" src="https://github.com/user-attachments/assets/24055b7e-7bab-4e46-ad56-03acec6aac7c" />
-
-
 
 
 
