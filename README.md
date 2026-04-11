@@ -1,17 +1,21 @@
 # Ensembles-Wind-Power-Autogluon
 This project provides a systematic pipeline for 15-minutes granuality wind power forecasting, built on the **AutoGluon** framework to enable rigorous model benchmarking and feature engineering.
+### **Regional Wind Power Forecasting**
 
-### **Methodological Rationale**
-While recent literature, such as Cambridge’s **WindDragon** project, has demonstrated the potential of automated deep learning architectures for wind energy, this pipeline prioritizes **tree-based models** (e.g., LightGBM, CatBoost) for several strategic reasons:
+**Why AutoGluon & Tree-Based Ensembles?**
+While projects like Cambridge’s *WindDragon* demonstrate the potential of AutoDL, this pipeline adopts a **tree-based approach** (LightGBM/CatBoost) via **AutoGluon** to address the unique constraints of emerging energy markets:
 
+* **Robustness to Data Scarcity:** In rapidly expanding markets, there is often a lack of the long-term historical timelines required to train deep neural networks effectively. Tree-based models are significantly more robust when testing ideas with limited data.
+* **Mitigating the Curse of Dimensionality:** With high-dimensional meteorological data, the risk of overfitting increases as the data timeline shortens. Tabular tree structures handle these feature spaces more effectively than deep learning, which often requires vast datasets to generalise.
+* **Operational Efficiency:** This approach prioritises rapid inference and lower computational overhead, ensuring the pipeline remains practical for real-time grid balancing where "shallow" but high-performance ensembles often outperform over-parameterised models.
 * **Signal-to-Noise Ratio (SNR) & Granularity:** In wind power prediction, the inherent noise in meteorological data often limits the effectiveness of high-complexity deep models. Tree-based ensembles offer superior robustness and better capture the non-linear relationships at the specific spatial granularities used here.
-* **Computational Efficiency:** Prioritizing rapid inference and lower computational overhead is critical for real-time grid balancing. Tree-based architectures provide a significantly faster training-to-prediction cycle compared to deep CNNs or Transformers.
-* **Data Scale Suitability:** Given the selective use of spatial location points, the dataset density does not necessitate the heavy parameterization of deep learning, making "shallow" but high-performance ensembles more effective for preventing overfitting.
+  
 
 ### **Key Features**
 * **Systematic Feature Ablation:** Evaluates the impact of regional aggregates, cyclical temporal encodings, and lagged weather features.
-* **Automated Model Selection:** Leverages AutoGluon to optimize hyperparameters across GBM, CatBoost, and Torch-based neural networks.
+* **Automated Model Selection:** Leverages AutoGluon to optimise hyperparameters across GBM, CatBoost, and Torch-based neural networks.
 * **Production-Ready:** Designed for 15-minute interval forecasting with a focus on interpretability and deployment speed.
+  
 <img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/9b6bf685-294e-46f4-b55f-5e68d911b2e8" />
 <img width="1789" height="490" alt="image" src="https://github.com/user-attachments/assets/6492292f-f389-4537-b383-488d0d52af9c" />
 <img width="646" height="528" alt="image" src="https://github.com/user-attachments/assets/bb0bb3fc-dc25-4843-ad63-a9e1651c8781" />
