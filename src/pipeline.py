@@ -25,18 +25,6 @@ def _train_val_test_split_by_time(
     return {"train": xy(train), "val": xy(val), "test": xy(test)}
 
 
-@dataclass
-class AutoGluonRunResult:
-    tabular_predictor_path: str
-    tabular_leaderboard: pd.DataFrame
-    tabular_metrics_test: Dict[str, float]
-    tabular_best_model: str
-    tabular_best_hparams: Dict
-
-    multimodal_predictor_path: Optional[str] = None
-    multimodal_metrics_test: Optional[Dict[str, float]] = None
-
-
 def run_autogluon_pipeline(
     ed,
     esql,
