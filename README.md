@@ -1,5 +1,5 @@
 # Ensembles-Wind-Power-Autogluon
-This project provides a systematic pipeline for high-frequency wind power forecasting, built on the **AutoGluon** framework to enable rigorous model benchmarking and feature engineering.
+This project provides a systematic pipeline for 15-minutes granuality wind power forecasting, built on the **AutoGluon** framework to enable rigorous model benchmarking and feature engineering.
 
 ### **Methodological Rationale**
 While recent literature, such as Cambridge’s **WindDragon** project, has demonstrated the potential of automated deep learning architectures for wind energy, this pipeline prioritizes **tree-based models** (e.g., LightGBM, CatBoost) for several strategic reasons:
