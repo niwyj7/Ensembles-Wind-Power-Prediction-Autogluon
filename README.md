@@ -8,7 +8,7 @@ While projects like Cambridge’s *WindDragon* demonstrate the potential of Auto
 * **Robustness to Data Scarcity:** In rapidly expanding markets, there is often a lack of the long-term historical timelines required to train deep neural networks effectively. Tree-based models are significantly more robust when testing ideas with limited data.
 * **Mitigating the Curse of Dimensionality:** With high-dimensional meteorological data, the risk of overfitting increases as the data timeline shortens. Tabular tree structures handle these feature spaces more effectively than deep learning, which often requires vast datasets to generalise.
 * **Operational Efficiency:** This approach prioritises rapid inference and lower computational overhead, ensuring the pipeline remains practical for real-time grid balancing where "shallow" but high-performance ensembles often outperform over-parameterised models.
-* **Signal-to-Noise Ratio (SNR) & Granularity:** In wind power prediction, the inherent noise in meteorological data often limits the effectiveness of high-complexity deep models. Tree-based ensembles offer superior robustness and better capture the non-linear relationships at the specific spatial granularities used here.
+* **Signal-to-Noise Ratio (SNR) & Granularity:** In wind power prediction, the inherent noise in meteorological data often limits the effectiveness of high-complexity deep models. Tree-based ensembles offer superior robustness and better capture the non-linear relationships at the specific spatial granularities used here. I opted to test lower-resolution regional aggregates. My results demonstrate that strategic feature engineering (regional means/std) can capture the essential spatial dynamics of a weather system without the need for the high-resolution "feature maps" and CNN. This achieves a superior balance between Signal-to-Noise Ratio (SNR) and computational efficiency.
   
 
 ### **Key Features**
@@ -18,7 +18,7 @@ While projects like Cambridge’s *WindDragon* demonstrate the potential of Auto
 
 ### **Results**  
 
-#### **### Performance Evaluation**
+#### **Performance Evaluation**
 The model was trained on **16,704 observations** with **493 features** (pivoted spatial grid points and temporal encodings). We utilized an automated ensemble strategy, which outperformed individual base models.
 
 | Model | Validation RMSE | Training Time (s) | Interpretation |
@@ -32,11 +32,11 @@ The model was trained on **16,704 observations** with **493 features** (pivoted 
 * **Ensemble Composition:** The final model is a weighted ensemble dominated by **CatBoost (77.8%)**. This validates the initial hypothesis that gradient-boosted decision trees (GBDTs) are superior to deep learning for this tabular meteorological dataset.
 * **Efficiency:** The pipeline achieved a high inference throughput of **~9,131 rows/s**, making it highly suitable for real-time grid dispatching scenarios.
 
-#### **### Conclusion & Discussion**
+#### **Conclusion & Discussion**
 The experimental results demonstrate that for regional wind power forecasting in China using ECMWF data, **tree-based ensembles provide a more robust and computationally efficient solution than deep neural networks.**
 
 1.  **Model Selection:** CatBoost's dominance suggests it better captures the non-linear relationship between 100m wind speeds and power generation, likely due to its superior handling of noisy tabular features compared to `NeuralNetTorch`, which showed a significantly higher RMSE (799.84).
-2.  **Scalability:** Despite the high dimensionality of the input space (493 columns), the model converged in under 70 seconds. This suggests that the **Curse of Dimensionality** was effectively mitigated by AutoGluon’s feature pruning and the inherent feature selection of GBDTs.
+2.  **Scalability:** Despite the high dimensionality of the input space (493 columns), the model converged in under 70 seconds. This suggests that the **Dimensionality** was effectively mitigated by AutoGluon’s feature pruning and the inherent feature selection of GBDTs.
 
 > **Compute Environment:** > Experiments were conducted on a high-memory Linux cluster (56 Cores, 448GB RAM). The architecture leverages multi-core parallelization for rapid hyperparameter optimization.
 
