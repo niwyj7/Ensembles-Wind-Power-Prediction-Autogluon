@@ -32,10 +32,11 @@ While projects like Cambridge’s *WindDragon* demonstrate the potential of Auto
 
 * **Other Weather Features** 
 <img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/4fcd9cf4-394c-493b-916f-aedee7aa2bea" />
+<img width="750" height="528" alt="image" src="https://github.com/user-attachments/assets/931afd1f-aa8b-43cf-ac0f-768e6ffc879e" />
 
 * **Regional Wind Power Generation**
 * No obvious evidence of increasing installed capacity of wind farms.
-<img width="750" height="528" alt="image" src="https://github.com/user-attachments/assets/931afd1f-aa8b-43cf-ac0f-768e6ffc879e" />
+
 <img width="1488" height="1489" alt="image" src="https://github.com/user-attachments/assets/24055b7e-7bab-4e46-ad56-03acec6aac7c" />
 
 
