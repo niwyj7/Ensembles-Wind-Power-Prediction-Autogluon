@@ -1,0 +1,85 @@
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group_removed</th>
+      <th>n_removed</th>
+      <th>val_rmse_full</th>
+      <th>val_rmse_after_removal</th>
+      <th>rmse_delta_positive_worse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>grid_all</td>
+      <td>438</td>
+      <td>660.20665</td>
+      <td>688.661983</td>
+      <td>28.455333</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>weather_extra</td>
+      <td>3</td>
+      <td>660.20665</td>
+      <td>684.994351</td>
+      <td>24.787700</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>regional_diff</td>
+      <td>18</td>
+      <td>660.20665</td>
+      <td>650.844099</td>
+      <td>-9.362551</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>regional_roll</td>
+      <td>36</td>
+      <td>660.20665</td>
+      <td>649.902532</td>
+      <td>-10.304118</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>seperated_diff</td>
+      <td>219</td>
+      <td>660.20665</td>
+      <td>648.708291</td>
+      <td>-11.498360</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>time</td>
+      <td>4</td>
+      <td>660.20665</td>
+      <td>642.092152</td>
+      <td>-18.114498</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>regional_base</td>
+      <td>3</td>
+      <td>660.20665</td>
+      <td>642.022739</td>
+      <td>-18.183911</td>
+    </tr>
+  </tbody>
+</table>
+</div>
