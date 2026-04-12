@@ -3,13 +3,15 @@ This project provides a systematic pipeline for 15-minute granularity wind power
 ### **Regional Wind Power Forecasting**
 
 **Why AutoGluon & Tree-Based Ensembles?**
-While projects like Cambridge’s *WindDragon* demonstrate the potential of AutoDL, this pipeline adopts a **tree-based approach** (LightGBM/CatBoost) via **AutoGluon** to address the unique constraints of emerging energy markets:
+While projects like Cambridge’s *WindDragon* [^1] demonstrate the potential of AutoDL, this pipeline adopts a **tree-based approach** (LightGBM/CatBoost) via **AutoGluon** to address the unique constraints of emerging energy markets:
 
 * **Robustness to Data Scarcity:** In rapidly expanding markets, there is often a lack of the long-term historical timelines required to train deep neural networks effectively. Tree-based models are significantly more robust when testing ideas with limited data.
 * **Mitigating the Curse of Dimensionality:** With high-dimensional meteorological data, the risk of overfitting increases as the data timeline shortens. Tabular tree structures handle these feature spaces more effectively than deep learning, which often requires vast datasets to generalise.
 * **Operational Efficiency:** This approach prioritises rapid inference and lower computational overhead, ensuring the pipeline remains practical for real-time grid balancing where "shallow" but high-performance ensembles often outperform over-parameterised models.
 * **Signal-to-Noise Ratio (SNR) & Granularity:** In wind power prediction, the inherent noise in meteorological data often limits the effectiveness of high-complexity deep models. Tree-based ensembles offer superior robustness and better capture the non-linear relationships at the specific spatial granularities used here. I opted to test lower-resolution regional aggregates. My results demonstrate that strategic feature engineering (regional means/std) can capture the essential spatial dynamics of a weather system without the need for the high-resolution "feature maps" and CNN. This achieves a superior balance between Signal-to-Noise Ratio (SNR) and computational efficiency.
   
+To handle 400+ features, the pipeline leverages AutoGluon’s automated regularisation, replacing manual calibration of L2 penalties, feature fractioning, and leaf constraints. By dynamically optimising structural parameters and employing multi-layer stacking, AutoGluon mitigates the "Curse of Dimensionality" and ensures robustness against noise—achieving stable generalisation on limited meteorological datasets without the need for exhaustive hand-tuning [^2].
+
 
 ### **Key Features**
 * **Systematic Feature Ablation:** Evaluates the impact of regional aggregates, cyclical temporal encodings, and lagged weather features.
@@ -76,6 +78,6 @@ The experimental results demonstrate that for regional wind power forecasting in
 
 <img width="1488" height="1489" alt="image" src="https://github.com/user-attachments/assets/24055b7e-7bab-4e46-ad56-03acec6aac7c" />
 
+[^1]: Cambridge WindDragon Project. "Automated Deep Learning for Wind Power Prediction."(https://www.cambridge.org/core/journals/environmental-data-science/article/winddragon-automated-deep-learning-for-regional-wind-power-forecasting/64B3D7345C9B3EE66574E9F407F31482)
 
-
-
+[^2]: Erickson, N., et al. (2020). "AutoGluon-Tabular: Robust and Accurate AutoML for Structured Data." arXiv preprint arXiv:2003.06505.
