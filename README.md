@@ -44,8 +44,8 @@ The model was trained on **16,704 observations** with **493 features** (pivoted 
 
 
 **Key Metric Analysis:**
-* **Ensemble Composition:** The final model is a weighted ensemble dominated by **CatBoost (77.8%)**. This validates the initial hypothesis that gradient-boosted decision trees (GBDTs) are superior to deep learning for this tabular meteorological dataset.
-* **Efficiency:** The pipeline achieved a high inference throughput of **~9,131 rows/s**, making it highly suitable for real-time grid dispatching scenarios.
+* **Ensemble Composition:** The final model is a weighted ensemble dominated by **CatBoost (77.8%)**. This validates the initial hypothesis that gradient-boosted decision trees (GBDTs) are superior to deep learning for this "tabular" meteorological dataset.
+* **Efficiency:** The pipeline achieved a high inference throughput of **~9,131 rows/s**, making it suitable for real-time grid dispatching scenarios.
 
 #### **Conclusion & Discussion**
 The experimental results demonstrate that for regional wind power forecasting in China using ECMWF data, **tree-based ensembles provide a more robust and computationally efficient solution than deep neural networks.**
