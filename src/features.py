@@ -18,7 +18,6 @@ def _add_weather_features(df: pd.DataFrame, weather_features: List[str]) -> pd.D
     out=df.copy()
     for f in weather_features:
         out[f"{f}_added"]=esql.select([f], start=out.index.min(), end=out.index.max(),NN=0).groupby(level='datetime').mean()[f]
-    print("添加天气特征后数据：")
     out=out.ffill().bfill()
     print(out)
     return out
