@@ -57,26 +57,32 @@ The experimental results demonstrate that for regional wind power forecasting in
 
 
 ### **EDA**  
-* **Regional Wind Field Study** 
-<img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/9b6bf685-294e-46f4-b55f-5e68d911b2e8" />
-<img width="1789" height="490" alt="image" src="https://github.com/user-attachments/assets/6492292f-f389-4537-b383-488d0d52af9c" />
-<img width="646" height="528" alt="image" src="https://github.com/user-attachments/assets/bb0bb3fc-dc25-4843-ad63-a9e1651c8781" />
-
-* Diff features.
-<img width="1989" height="390" alt="image" src="https://github.com/user-attachments/assets/e98ec5d2-c517-4341-aac3-a744bf0f4f0a" />
-
-* Wind speed square and cube value, cube shows better separation.
-<img width="1789" height="489" alt="image" src="https://github.com/user-attachments/assets/d89d5a9f-71a2-44da-a738-110b2d090989" />
-<img width="624" height="565" alt="image" src="https://github.com/user-attachments/assets/09ca57a2-75ac-4d7e-8767-d1217ec6bb6f" />
-
-* **Other Weather Features** 
-<img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/4fcd9cf4-394c-493b-916f-aedee7aa2bea" />
-<img width="750" height="528" alt="image" src="https://github.com/user-attachments/assets/931afd1f-aa8b-43cf-ac0f-768e6ffc879e" />
-
-* **Regional Wind Power Generation**
+**Regional Wind Power Generation**
 * No obvious evidence of increasing installed capacity of wind farms.
 
 <img width="1488" height="1489" alt="image" src="https://github.com/user-attachments/assets/24055b7e-7bab-4e46-ad56-03acec6aac7c" />
+
+**Regional Wind Field Study** 
+<img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/9b6bf685-294e-46f4-b55f-5e68d911b2e8" />
+<img width="1789" height="490" alt="image" src="https://github.com/user-attachments/assets/6492292f-f389-4537-b383-488d0d52af9c" />
+
+
+<img width="646" height="528" alt="image" src="https://github.com/user-attachments/assets/bb0bb3fc-dc25-4843-ad63-a9e1651c8781" />
+
+* Diff features.
+  
+<img width="1989" height="390" alt="image" src="https://github.com/user-attachments/assets/e98ec5d2-c517-4341-aac3-a744bf0f4f0a" />
+
+* Wind speed square and cube value, cube shows better separation.
+  
+<img width="1789" height="489" alt="image" src="https://github.com/user-attachments/assets/d89d5a9f-71a2-44da-a738-110b2d090989" />
+<img width="624" height="565" alt="image" src="https://github.com/user-attachments/assets/09ca57a2-75ac-4d7e-8767-d1217ec6bb6f" />
+
+**Other Weather Features** 
+<img width="1189" height="1489" alt="image" src="https://github.com/user-attachments/assets/4fcd9cf4-394c-493b-916f-aedee7aa2bea" />
+<img width="750" height="528" alt="image" src="https://github.com/user-attachments/assets/931afd1f-aa8b-43cf-ac0f-768e6ffc879e" />
+
+
 
 [^1]: Cambridge WindDragon Project. "Automated Deep Learning for Wind Power Prediction."(https://www.cambridge.org/core/journals/environmental-data-science/article/winddragon-automated-deep-learning-for-regional-wind-power-forecasting/64B3D7345C9B3EE66574E9F407F31482)
 
